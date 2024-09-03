@@ -33,3 +33,21 @@ Currently, two official plugins are available:
    - html에서는 이미지 태그가 닫히지 않아도 문제가 없지만, jsx에서는 닫혀있어야 한다. 셀프 클로징 해야한다.
 4. 최상위 태그는 반드시 하나여야만 한다.
    - return 만에 최상위 태그 하나만 허용한다.
+
+## 스타일 설정하는 방법
+
+- 요소에 직접 추가하기
+
+```jsx
+<div style={{ backgroundColor: "red" }}>로그인</div>
+```
+
+주의사항 : 스타일이름은 첫글자를 대문자로 변경하여 작성한다.(카멜 표기법) border-bottom X -> borderBottom O
+
+하지만 위와 방식으로 하다보면 많아지다보면 가독성이 떨어지기 때문에 별도의 css 파일을 만들어 작업하는게 좋다.
+
+Main.jsx / Main.css
+불러오는 방법 import `"./Main.css"` 경로만 불러와도 리액트에서 제공하는 기능이다.
+
+요소의 클래스는 `className`으로 설정하면 된다.
+자바스크립트와 HTML을 함께 쓰고 있기 때문에 자바스크립트 예약어인 class를 사용할 수 없다.
