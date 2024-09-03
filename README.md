@@ -59,3 +59,13 @@ Main.jsx / Main.css
 
 자식 컴포넌트에게 props를 전달해주면 객체로 묶여서 전달된다.
 <img width="153" alt="스크린샷 2024-09-03 오후 9 39 56" src="https://github.com/user-attachments/assets/b4919ec9-7a6a-412f-9158-08e118f297d8">
+
+## prop의 기본값 지정하기
+
+- 값이 지정되지 않았을 때 prop에 기본값을 주길 원한다면, 변수 바로 뒤에 `=`과 함께 기본값을 넣어 구조 분해 할당을 해줄 수 있다.
+
+```jsx
+function Button({ text, color = "black" }) {
+  // ...
+}
+```
