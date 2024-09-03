@@ -58,6 +58,7 @@ Main.jsx / Main.css
 이런 props를 이용하면 컴포넌트를 마치 함수를 호출하듯 전달하는 값에 따라서 각각 다른 UI를 렌더링하도록 만들수 있다.
 
 자식 컴포넌트에게 props를 전달해주면 객체로 묶여서 전달된다.
+
 <img width="153" alt="스크린샷 2024-09-03 오후 9 39 56" src="https://github.com/user-attachments/assets/b4919ec9-7a6a-412f-9158-08e118f297d8">
 
 ## prop의 기본값 지정하기
