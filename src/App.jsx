@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Controller from "./components/Controller";
 import Viewer from "./components/Viewer";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`count: ${count}`);
+  }, [count]);
+  // 의존성 배열
+  // dependency array
+  // deps
 
   const onClickButton = (value) => {
     setCount(count + value);
