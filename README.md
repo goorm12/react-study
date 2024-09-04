@@ -115,3 +115,10 @@ function App() {
 ```
 
 - 리액트는 상태가 변경되면 리렌더링 한다.
+
+```jsx
+const [state, setState] = useState(0);
+state : 현재 값
+setState: 변경해줄 값
+useState: 기본 값을 설정한다.
+```
