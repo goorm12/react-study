@@ -72,3 +72,46 @@ function Button({ text, color = "black" }) {
 ```
 
 - props는 부모 컴포넌트에서 자식 컴포넌트로만 전달 가능하다. 자식 컴포넌트에서 부모 컴포넌트로는 불가능
+
+## State란?
+
+- state === 상태
+- 현재 가지고 있는 형태나 모양을 정의 변화할 수 있는 동적인 값.
+
+### 사용법
+
+```jsx
+import { useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [light, setLight] = useState("OFF");
+
+  return (
+    <>
+      <div>
+        <h1>{light}</h1>
+        <button
+          onClick={() => {
+            setLight(light === "ON" ? "OFF" : "ON");
+          }}
+        >
+          {light === "ON" ? "끄기" : "켜기"}
+        </button>
+      </div>
+      <div>
+        <h1>{count}</h1>
+        <button
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          +
+        </button>
+      </div>
+    </>
+  );
+}
+```
+
+- 리액트는 상태가 변경되면 리렌더링 한다.
