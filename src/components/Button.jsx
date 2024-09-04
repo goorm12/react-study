@@ -1,6 +1,10 @@
 const Button = ({ text, children }) => {
   return (
-    <button>
+    <button
+      onClick={() => {
+        console.log(text);
+      }}
+    >
       {text}
       {children}
     </button>
