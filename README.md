@@ -128,3 +128,63 @@ useState: 기본 값을 설정한다.
 1. 자신이 관리하는 state가 변경되었을때,
 2. 자신이 제공받는 props의 값이 변경되었을 때 리렌더링이 진행된다.
 3. 부모 컴포넌트가 리렌더링되면 자식 컴포넌트도 리렌더링 된다.
+
+```jsx
+const Bulb = ({ light }) => {
+  return (
+    <div>
+      {light === "ON" ? (
+        <h1 style={{ backgroundColor: "orange" }}>ON</h1>
+      ) : (
+        <h1 style={{ backgroundColor: "gray" }}>OFF</h1>
+      )}
+    </div>
+  );
+};
+function App() {
+  const [count, setCount] = useState(0);
+  const [light, setLight] = useState("OFF");
+
+  return (
+    <>
+      <div>
+        <Bulb light={light} />
+        <button
+          onClick={() => {
+            setLight(light === "ON" ? "OFF" : "ON");
+          }}
+        >
+          {light === "ON" ? "끄기" : "켜기"}
+        </button>
+      </div>
+      <div>
+        <h1>{count}</h1>
+        <button
+          onClick={() => {
+            setCount(count + 1);
+          }}
+        >
+          +
+        </button>
+      </div>
+    </>
+  );
+}
+```
+
+- 위 코드의 문제점은 카운트 버튼을 클릭 시 Bulb도 출력이 된다. 이유는 리액트 렌더링 3번과 같다. 부모컴포넌트가 리렌더링되면 자식 컴포넌트도 리렌더링 된다.
+- 해결 방법으론 다른 코드라면 각각 다른 컴포넌트로 만들어서 적용하면 된다.
+
+```jsx
+import Bulb from "./components/Bulb";
+import Counter from "./components/Counter";
+
+function App() {
+  return (
+    <>
+      <Bulb />
+      <Counter />
+    </>
+  );
+}
+```
