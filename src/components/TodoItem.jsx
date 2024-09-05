@@ -1,5 +1,5 @@
 import "./TodoItem.css";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { TodoContext } from "../App";
 
 const TodoItem = ({ id, isDone, content, date }) => {
@@ -22,4 +22,4 @@ const TodoItem = ({ id, isDone, content, date }) => {
   );
 };
 
-export default TodoItem;
+export default memo(TodoItem);
