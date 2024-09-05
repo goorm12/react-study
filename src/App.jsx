@@ -79,6 +79,7 @@ function App() {
       targetId: targetId,
     });
   }, []);
+
   return (
     <div className="App">
       <Header />
