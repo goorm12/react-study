@@ -33,10 +33,7 @@ export default [
         "warn",
         { allowConstantExport: true },
       ],
-      // 실습을 위해 지금은 꺼두기
-      // 쓰지 않는 변수를 오류나게 해주는 옵션
       "no-unused-vars": "off",
-      // 리액트를 다 배우고 좀더 안전하게 사용하게 해주는 옵션
       "react/prop-types": "off",
     },
   },
